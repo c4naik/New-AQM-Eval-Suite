@@ -60,19 +60,19 @@ TcpSocket::GetTypeId()
             .AddAttribute(
                 "SndBufSize",
                 "TcpSocket maximum transmit buffer size (bytes)",
-                UintegerValue(131072), // 128k
+                UintegerValue(131072000), // 128k
                 MakeUintegerAccessor(&TcpSocket::GetSndBufSize, &TcpSocket::SetSndBufSize),
                 MakeUintegerChecker<uint32_t>())
             .AddAttribute(
                 "RcvBufSize",
                 "TcpSocket maximum receive buffer size (bytes)",
-                UintegerValue(131072),
+                UintegerValue(131072000),
                 MakeUintegerAccessor(&TcpSocket::GetRcvBufSize, &TcpSocket::SetRcvBufSize),
                 MakeUintegerChecker<uint32_t>())
             .AddAttribute(
                 "SegmentSize",
                 "TCP maximum segment size in bytes (may be adjusted based on MTU discovery)",
-                UintegerValue(536),
+                UintegerValue(1460),
                 MakeUintegerAccessor(&TcpSocket::GetSegSize, &TcpSocket::SetSegSize),
                 MakeUintegerChecker<uint32_t>())
             .AddAttribute("InitialSlowStartThreshold",
@@ -84,7 +84,7 @@ TcpSocket::GetTypeId()
             .AddAttribute(
                 "InitialCwnd",
                 "TCP initial congestion window size (segments)",
-                UintegerValue(10),
+                UintegerValue(10000),
                 MakeUintegerAccessor(&TcpSocket::GetInitialCwnd, &TcpSocket::SetInitialCwnd),
                 MakeUintegerChecker<uint32_t>())
             .AddAttribute("ConnTimeout",
@@ -114,7 +114,7 @@ TcpSocket::GetTypeId()
             .AddAttribute(
                 "DelAckCount",
                 "Number of packets to wait before sending a TCP ack",
-                UintegerValue(2),
+                UintegerValue(1),
                 MakeUintegerAccessor(&TcpSocket::GetDelAckMaxCount, &TcpSocket::SetDelAckMaxCount),
                 MakeUintegerChecker<uint32_t>())
             .AddAttribute("TcpNoDelay",
