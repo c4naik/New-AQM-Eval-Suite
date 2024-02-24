@@ -1,3 +1,34 @@
+# AQM Evaluation Suite for ns-3
+
+The AQM Evaluation Suite is an automated framework designed to evaluate the Active Queue Management (AQM) algorithms implemented in ns-3. It streamlines the process of simulation setup, topology creation, traffic generation, program execution, results collection, and graphical representation.
+
+## Usage
+
+1. **Navigate to the Examples Folder:**
+   Go to the `/src/new-aqm-eval-suite/examples` folder in your ns-3 installation.
+
+2. **Run Specific Example (e.g., "mild-congestion"):**
+   Execute the following command:
+…/…/…/ns3 run aqm-eval-suite-runner.cc – --name=mild-congestion
+
+3. **Run All Examples:**
+To run every example, use the following command:
+…/…/…/ns3 run aqm-eval-suite-runner.cc – --name=All
+
+4. **Output:**
+Running the suite will create an output folder containing all the generated graphs in the base ns-3 directory.
+
+## Building the Suite
+
+To build the default libraries and example programs included in this package, use the `ns3` tool.
+
+## Contributing
+
+Feel free to contribute to this project by optimizing and removing redundant code to make the suite lightweight and efficient.
+
+
+
+
 # The Network Simulator, Version 3
 
 [![codecov](https://codecov.io/gh/nsnam/ns-3-dev-git/branch/master/graph/badge.svg)](https://codecov.io/gh/nsnam/ns-3-dev-git/branch/master/)
